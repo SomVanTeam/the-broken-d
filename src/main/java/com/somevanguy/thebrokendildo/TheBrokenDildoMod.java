@@ -34,6 +34,7 @@ public class TheBrokenDildoMod {
     public TheBrokenDildoMod(IEventBus modEventBus, ModContainer modContainer) {
         NeoForge.EVENT_BUS.register(this);
         ModGameRules.register();
+        ModSounds.register(modEventBus);
         ModItems.register(modEventBus);
         new ModCustomEvents(); // automagically registers everything
         modEventBus.addListener(this::addCreative);

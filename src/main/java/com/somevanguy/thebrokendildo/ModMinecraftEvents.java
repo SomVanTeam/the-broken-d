@@ -44,10 +44,10 @@ public class ModMinecraftEvents {
     @SubscribeEvent
     public static void onTick(LevelTickEvent.Post tickEvent) {
         Level level = tickEvent.getLevel();
-        ServerLevel serverLevel = (ServerLevel)level;//level.getServer().getLevel(level.dimension());
         // for SOME FUCKING reason the tick event fires in all dimensions even if there are no players, so gotta check
         // i wasted almost an hour just debugging this shit
         if (TheBrokenDildoMod.LOADED&&!level.players().isEmpty()&&!level.isClientSide()) {
+            ServerLevel serverLevel = (ServerLevel)level;//level.getServer().getLevel(level.dimension());
             if (TheBrokenDildoMod.EVENTRNG.nextIntBetweenInclusive(1,
                     (int)(24000/ModGameRules.intValue(serverLevel, ModGameRules.EVENTS_PER_DAY)))==1) {
                 // i dont know why there isnt a direct method

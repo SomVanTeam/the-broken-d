@@ -2,6 +2,7 @@ package com.somevanguy.thebrokendildo;
 
 import com.somevanguy.thebrokendildo.events.ModBaseEvent;
 import com.somevanguy.thebrokendildo.events.ModCustomEvents;
+import com.somevanguy.thebrokendildo.items.ModItems;
 import net.minecraft.util.RandomSource;
 import net.neoforged.neoforge.common.NeoForge;
 import org.slf4j.Logger;
@@ -41,8 +42,9 @@ public class TheBrokenDildoMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            //event.accept(EXAMPLE_BLOCK_ITEM);
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItems.Circuit_Bread.get());
+            event.accept(ModItems.Nulls_Dildo.get());
         }
     }
 

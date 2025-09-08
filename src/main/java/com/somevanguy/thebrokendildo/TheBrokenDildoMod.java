@@ -27,6 +27,8 @@ public class TheBrokenDildoMod {
     public static final RandomSource EVENTRNG = RandomSource.create();
     public static ArrayList<ModBaseEvent> EVENTS0 = new ArrayList<>();
     public static ArrayList<ModBaseEvent> EVENTS1 = new ArrayList<>();
+    public static ArrayList<ModBaseEvent> EVENTS2 = new ArrayList<>();
+    public static boolean LOADED = false;
 
     public TheBrokenDildoMod(IEventBus modEventBus, ModContainer modContainer) {
         NeoForge.EVENT_BUS.register(this);

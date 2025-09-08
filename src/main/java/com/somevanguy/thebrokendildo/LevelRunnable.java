@@ -1,4 +1,4 @@
-package com.somevanguy.thebrokendildo.events;
+package com.somevanguy.thebrokendildo;
 
 import net.minecraft.server.level.ServerLevel;
 

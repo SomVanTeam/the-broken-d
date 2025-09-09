@@ -43,16 +43,18 @@ public class ModEvents {
             level.setBlockAndUpdate(new BlockPos(holePosX, y, holePosZ), Blocks.AIR.defaultBlockState());
         }
     });
-    public static final ModEvent DiamondGiftSmall = new GiftEvent("diamondgiftsmall", 0, Items.DIAMOND, 6);
+    public static final GiftEvent DiamondGiftSmall = new GiftEvent("diamondgiftsmall", 0, Items.DIAMOND, 6);
 
     // ==== stage 1 ====
 
-    public static final ModEvent DiamondGiftLarge = new GiftEvent("diamondgiftlarge", 1, Items.DIAMOND, 33);
-    public static final ModEvent NetheriteScrapGift = new GiftEvent("netheritescrapgift", 1, Items.NETHERITE_SCRAP, 13);
+    public static final GiftEvent DiamondGiftLarge = new GiftEvent("diamondgiftlarge", 1, Items.DIAMOND, 33);
+    public static final GiftEvent DiamondBlockGift = new GiftEvent("diamondblockgift", 1, Items.DIAMOND_BLOCK, 3);
+    public static final GiftEvent NetheriteScrapGift = new GiftEvent("netheritescrapgift", 1, Items.NETHERITE_SCRAP, 13);
+    public static final GiftEvent NullsDildoGift = new GiftEvent("nullsdildogift", 1, ModItems.Nulls_Dildo, 1);
     public static final ModEvent CircuitBreadGive = new ModEvent("circuitbreadgive", 1, (ServerLevel level) -> {
         ServerPlayer target = ModCommon.getRandomPlayer(level);
         if (target==null) return;
-        target.addItem(new ItemStack(ModItems.Circuit_Bread));
+        target.addItem(new ItemStack(ModItems.Circuit_Bread.get()));
     });
     public static final ModEvent LargeHole = new ModEvent("largehole", 1, (ServerLevel level) -> {
         ServerPlayer target = ModCommon.getRandomPlayer(level);

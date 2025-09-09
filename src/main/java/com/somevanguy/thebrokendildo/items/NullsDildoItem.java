@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 
 public class NullsDildoItem extends Item {
     public NullsDildoItem() {
-        super(new Properties().rarity(Rarity.EPIC).durability(676767));
+        super(new Properties().rarity(Rarity.EPIC).durability(13));
     }
 
     @Override

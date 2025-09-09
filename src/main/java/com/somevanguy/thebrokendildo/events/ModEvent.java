@@ -4,10 +4,10 @@ import com.somevanguy.thebrokendildo.LevelRunnable;
 import com.somevanguy.thebrokendildo.TheBrokenDildoMod;
 import net.minecraft.server.level.ServerLevel;
 
-public class ModBaseEvent {
+public class ModEvent {
     public int stage = 0;
     public LevelRunnable onInvoke;
-    public ModBaseEvent(int stage, LevelRunnable onInvoke) {
+    public ModEvent(int stage, LevelRunnable onInvoke) {
         this.stage = stage;
         this.onInvoke = onInvoke;
         switch (stage) {

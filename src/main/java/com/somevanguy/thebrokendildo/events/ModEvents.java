@@ -12,7 +12,7 @@ import net.minecraft.world.item.Items;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ModCustomEvents {
+public class ModEvents {
     @Nullable
     private static Player getRandomPlayer(ServerLevel level) {
         List<ServerPlayer> playerList = level.players();
@@ -20,17 +20,17 @@ public class ModCustomEvents {
                 TheBrokenDildoMod.EVENTRNG.nextIntBetweenInclusive(0, playerList.size()-1));
     }
     // stage 0
-    public static final ModBaseEvent Disc11Give = new ModBaseEvent(0, (ServerLevel level) -> {
+    public static final ModEvent Disc11Give = new ModEvent(0, (ServerLevel level) -> {
         getRandomPlayer(level).addItem(new ItemStack(Items.MUSIC_DISC_11));
     });
-    public static final ModBaseEvent BadMaceGive = new ModBaseEvent(0, (ServerLevel level) -> {
+    public static final ModEvent BadMaceGive = new ModEvent(0, (ServerLevel level) -> {
         ItemStack mace = new ItemStack(Items.MACE);
         mace.set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true);
         mace.set(DataComponents.MAX_DAMAGE, 1);
         getRandomPlayer(level).addItem(mace);
     });
     // stage 1
-    public static final ModBaseEvent CircuitBreadGive = new ModBaseEvent(1, (ServerLevel level) -> {
+    public static final ModEvent CircuitBreadGive = new ModEvent(1, (ServerLevel level) -> {
         getRandomPlayer(level).addItem(new ItemStack(ModItems.Circuit_Bread));
     });
 }

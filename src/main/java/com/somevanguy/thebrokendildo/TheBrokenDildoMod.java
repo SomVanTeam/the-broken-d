@@ -1,7 +1,7 @@
 package com.somevanguy.thebrokendildo;
 
-import com.somevanguy.thebrokendildo.events.ModBaseEvent;
-import com.somevanguy.thebrokendildo.events.ModCustomEvents;
+import com.somevanguy.thebrokendildo.events.ModEvent;
+import com.somevanguy.thebrokendildo.events.ModEvents;
 import com.somevanguy.thebrokendildo.items.ModItems;
 import net.minecraft.util.RandomSource;
 import net.neoforged.neoforge.common.NeoForge;
@@ -26,9 +26,9 @@ public class TheBrokenDildoMod {
     public static final String MOD_ID = "thebrokendildo";
     public static final Logger LOGGER = LogUtils.getLogger();
     public static final RandomSource EVENTRNG = RandomSource.create();
-    public static ArrayList<ModBaseEvent> EVENTS0 = new ArrayList<>();
-    public static ArrayList<ModBaseEvent> EVENTS1 = new ArrayList<>();
-    public static ArrayList<ModBaseEvent> EVENTS2 = new ArrayList<>();
+    public static ArrayList<ModEvent> EVENTS0 = new ArrayList<>();
+    public static ArrayList<ModEvent> EVENTS1 = new ArrayList<>();
+    public static ArrayList<ModEvent> EVENTS2 = new ArrayList<>();
     public static boolean LOADED = false;
 
     public TheBrokenDildoMod(IEventBus modEventBus, ModContainer modContainer) {
@@ -36,7 +36,7 @@ public class TheBrokenDildoMod {
         ModGameRules.register();
         ModSounds.register(modEventBus);
         ModItems.register(modEventBus);
-        new ModCustomEvents(); // automagically registers everything
+        new ModEvents(); // automagically registers everything
         modEventBus.addListener(this::addCreative);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

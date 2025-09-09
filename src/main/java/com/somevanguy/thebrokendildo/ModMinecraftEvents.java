@@ -1,6 +1,6 @@
 package com.somevanguy.thebrokendildo;
 
-import com.somevanguy.thebrokendildo.events.ModBaseEvent;
+import com.somevanguy.thebrokendildo.events.ModEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -26,11 +26,11 @@ public class ModMinecraftEvents {
         }
     }
 
-    public static ModBaseEvent getRandomEvent(ArrayList<ModBaseEvent> eventList) {
+    public static ModEvent getRandomEvent(ArrayList<ModEvent> eventList) {
         return eventList.get(TheBrokenDildoMod.EVENTRNG.nextIntBetweenInclusive(1, eventList.size()));
     }
 
-    public static ModBaseEvent getRandomEvent(int stage) {
+    public static ModEvent getRandomEvent(int stage) {
         switch (TheBrokenDildoMod.EVENTRNG.nextIntBetweenInclusive(0,2)) {
             default:
                 return getRandomEvent(TheBrokenDildoMod.EVENTS0);

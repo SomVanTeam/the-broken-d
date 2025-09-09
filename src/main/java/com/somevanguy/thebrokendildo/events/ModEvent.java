@@ -5,11 +5,13 @@ import com.somevanguy.thebrokendildo.TheBrokenDildoMod;
 import net.minecraft.server.level.ServerLevel;
 
 public class ModEvent {
-    public int stage = 0;
+    public int stage;
     public LevelRunnable onInvoke;
-    public ModEvent(int stage, LevelRunnable onInvoke) {
+    public String name;
+    public ModEvent(String name, int stage, LevelRunnable onInvoke) {
         this.stage = stage;
         this.onInvoke = onInvoke;
+        this.name = name;
         switch (stage) {
             default -> TheBrokenDildoMod.EVENTS0.add(this);
             case 1 -> TheBrokenDildoMod.EVENTS1.add(this);

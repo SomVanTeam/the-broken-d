@@ -23,6 +23,6 @@ public class NullsDildoItem extends Item {
         if (level instanceof ServerLevel) {
             player.getItemInHand(usedHand).hurtAndBreak(1, (ServerLevel) level, null, a -> {});
         }
-         return InteractionResultHolder.success(player.getItemInHand(usedHand));
+         return InteractionResultHolder.consume(player.getItemInHand(usedHand));
     }
 }

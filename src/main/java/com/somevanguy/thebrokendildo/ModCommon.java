@@ -5,6 +5,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -33,5 +34,8 @@ public abstract class ModCommon {
                     TheBrokenDildoMod.EVENTRNG.nextIntBetweenInclusive(0, playerList.size()-1));
         }
         return null;
+    }
+    public static double Vec3Magnitude(Vec3 vec) {
+        return Math.sqrt(vec.x*vec.x+vec.y*vec.y+vec.z*vec.z);
     }
 }

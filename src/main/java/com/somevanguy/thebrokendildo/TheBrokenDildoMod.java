@@ -3,7 +3,11 @@ package com.somevanguy.thebrokendildo;
 import com.somevanguy.thebrokendildo.events.ModEvent;
 import com.somevanguy.thebrokendildo.events.ModEvents;
 import com.somevanguy.thebrokendildo.items.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.util.RandomSource;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import org.slf4j.Logger;
 
@@ -54,5 +58,13 @@ public class TheBrokenDildoMod {
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
         LOGGER.info("HELLO from server starting");
+    }
+
+    @EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+
+        }
     }
 }
